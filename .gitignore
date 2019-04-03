@@ -1,0 +1,37 @@
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+
+### Gradle ###
+src/main/java/.DS_Store
+src/main/java/com/.DS_Store
+src/main/java/com/ndcc/.DS_Store
+src/main/java/com/ndcc/registration/.DS_Store
+"C:\\\\logs/"
+.gradle/
