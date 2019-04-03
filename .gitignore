@@ -27,3 +27,11 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+### Gradle ###
+src/main/java/.DS_Store
+src/main/java/com/.DS_Store
+src/main/java/com/ndcc/.DS_Store
+src/main/java/com/ndcc/registration/.DS_Store
+"C:\\\\logs/"
+.gradle/

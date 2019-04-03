@@ -27,37 +27,39 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public List<Player> getPlayer() {
+        logger.info("Retrieved the players");
         return (List<Player>) playerRegister.findAll();
     }
 
     @Override
     public Player findById(long id) {
-        logger.info("findById", id);
         Optional<Player> player = playerRegister.findById(id);
         if(player.isPresent()){
+            logger.info("Player is Found");
             return player.get();
         } else {
+            logger.error("Player is not Found");
             return null;
         }
     }
 
     @Override
     public Player update(Player player, long l) {
-        logger.info("update", player);
+        logger.info("Updated the player");
         return playerRegister.save(player);
     }
 
     @Override
     public void deletePlayerById(long id) {
-        logger.info("deletePlayerById", id);
+        logger.info("Delete the player");
         playerRegister.deleteById(id);
     }
 
     @Override
     public Player updatePlayersEmail(Player player, long id) {
         Player player1 = findById(id);
-        player1.seteMail(player.geteMail());
-        logger.info("updatePlayersEmail", player.geteMail());
+        player1.setEmail(player.getEmail());
+        logger.info("update the player's email ID");
         return playerRegister.save(player1);
     }
 }
