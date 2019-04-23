@@ -1,0 +1,4 @@
+2019-03-30T01:13:11,178 ERROR [Sample][restartedMain|PlayerRegistrationApplication] 24 run Oops! We have an Error. OK
+2019-03-30T01:13:11,179 FATAL [Sample][restartedMain|PlayerRegistrationApplication] 25 run Damn! Fatal error. Please fix me.
+2019-04-01T21:39:23,822 ERROR [Sample][restartedMain|PlayerRegistrationApplication] 24 run Oops! We have an Error. OK
+2019-04-01T21:39:23,823 FATAL [Sample][restartedMain|PlayerRegistrationApplication] 25 run Damn! Fatal error. Please fix me.
