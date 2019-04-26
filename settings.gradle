@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'playerRegistration'
+rootProject.name = 'ndcc-registration-service'
