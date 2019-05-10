@@ -1,4 +1,4 @@
-
+pipeline{
    def mvnHome
    def gradleHome
 	
@@ -10,7 +10,7 @@
       // **       in the global configuration.           
       mvnHome = tool 'M3'
       gradleHome = tool 'gradle'	   
-   
+   }
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
