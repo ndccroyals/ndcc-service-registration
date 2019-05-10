@@ -1,8 +1,8 @@
-pipeline{
+
    def mvnHome
    def gradleHome
 	
-   stage('Preparation') { // for display purposes
+  def stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
       git'https://github.com/ndccroyals/ndcc-service-registration.git'
       // Get the Maven tool.
@@ -10,8 +10,8 @@ pipeline{
       // **       in the global configuration.           
       mvnHome = tool 'M3'
       gradleHome = tool 'gradle'	   
-   }
-   stage('Build') {
+   
+	  def stage('Build') {
       // Run the maven build
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
@@ -19,7 +19,7 @@ pipeline{
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-   stage('gradle build') {
+  def stage('gradle build') {
         if (isUnix()){
 		sh "'${gradleHome}/bin/gradle clean build'"
 		} else {
