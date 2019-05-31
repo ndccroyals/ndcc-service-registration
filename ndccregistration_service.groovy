@@ -9,12 +9,15 @@ node{
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
       mvnHome = tool 'M3'
-      gradleHome = tool 'gradle'	   
+      gradleHome = tool 'gradle'
+	  
   }
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+	     sh "export PATH = ${PATH}:${mvnhome}\bin"
+	      sh "mvn clean install"
+         //sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
