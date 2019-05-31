@@ -15,6 +15,7 @@ node{
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
+	     println('shell command here :' + echo $PATH)
 	     sh "export PATH = ${PATH}:${mvnHome}\bin"
 	      sh "mvn clean install"
          //sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
