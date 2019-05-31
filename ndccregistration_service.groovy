@@ -14,9 +14,9 @@ node{
 	   stage('Build') {
       // Run the maven build
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' clean package"
+         sh "'${mvnHome}/bin' clean package"
       } else {
-         bat(/"${mvnHome}\bin\mvn" clean package/)
+         bat(/"${mvnHome}\bin" clean package/)
       }
    }
    stage('gradle build') {
