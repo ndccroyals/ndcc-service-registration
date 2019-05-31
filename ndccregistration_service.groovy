@@ -2,7 +2,7 @@
    def mvnHome
    def gradleHome
 	
-  def stage('Preparation') {
+  stage('Preparation') {
       // or display purposes Get some code from a GitHub repository
       git'https://github.com/ndccroyals/ndcc-service-registration.git'
       // Get the Maven tool.
@@ -11,7 +11,7 @@
       mvnHome = tool 'M3'
       gradleHome = tool 'gradle'	   
    
-	  def stage('Build') {
+	   stage('Build') {
       // Run the maven build
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
@@ -19,7 +19,7 @@
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-  def stage('gradle build') {
+   stage('gradle build') {
         if (isUnix()){
 		sh "'${gradleHome}/bin/gradle clean build'"
 		} else {
