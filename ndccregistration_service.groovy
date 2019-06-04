@@ -22,6 +22,7 @@ node {
     stage('gradle build') {
         if (isUnix()){
             sh "'${gradleHome}/bin/gradle clean build'"
+            sh "docker build -t ndcc ."
         } else {
             bat(/"${gradleHome}\bin\gradle" clean build/)
         }
