@@ -1,15 +1,18 @@
-node {
+@Library("ndcc-shared-lib") _
+ndccservice.groovy
+
+/*node {
    def mvnHome
    def gradleHome
-	
+
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
 		checkout scm
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
-      // **       in the global configuration.           
+      // **       in the global configuration.
       mvnHome = tool 'M3'
-      gradleHome = tool 'gradle'	   
+      gradleHome = tool 'gradle'
    }
    stage('Build') {
       // Run the maven build
@@ -27,9 +30,8 @@ node {
 		   bat(/"${gradleHome}\bin\gradle" clean build/)
 		   }
 		   }
-		   
-     // junit '**/target/surefire-reports/TEST-*.xml'
-     // archive 'target/*.jar'
-  // }
-   
-}
+
+      junit '---"**"/target/surefire-reports/TEST-*.xml'
+      archive 'target/*.jar'
+   }
+   }*/
