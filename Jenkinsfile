@@ -24,7 +24,8 @@ ndccservice.groovy
    }
    stage('gradle build') {
         if (isUnix()){
-		sh "'${gradleHome}/bin/gradle clean build'"
+		//sh "'${gradleHome}/bin/gradle clean build'"
+		sh "./gradlew clean build"
 		} else {
 		   bat(/"${gradleHome}\bin\gradle" clean build/)
 		   }
@@ -34,4 +35,8 @@ ndccservice.groovy
       archive 'target/*.jar'
    }
    
+<<<<<<< HEAD:jenkinsfile
 }*/
+=======
+}
+>>>>>>> 5fa1b0e5c164f9b6e3620279f79ac34492653465:Jenkinsfile
