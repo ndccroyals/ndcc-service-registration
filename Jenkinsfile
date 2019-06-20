@@ -1,4 +1,4 @@
-@library('ndcc-shared-lib') _
+@Library('ndcc-shared-lib') _
 ndccservice.groovy
 
 /*node {
