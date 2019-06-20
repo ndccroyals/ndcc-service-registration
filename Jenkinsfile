@@ -1,5 +1,4 @@
-final ndcc-shared-lib = library('ndcc-shared-lib')
-@Library('ndcc-shared-lib') _
+@library('ndcc-shared-lib') _
 ndccservice.groovy
 
 /*node {
