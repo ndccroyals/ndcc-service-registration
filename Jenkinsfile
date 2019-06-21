@@ -1,5 +1,5 @@
 @Library('ndcc-shared-lib') _
-ndccservice.groovy
+ndccservice
 
 /*node {
    def mvnHome
