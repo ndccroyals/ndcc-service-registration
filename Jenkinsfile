@@ -31,7 +31,7 @@ node {
 		   }
 		   }
 
-      junit '---"**"/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
+   //   junit '---"**"/target/surefire-reports/TEST-*.xml'
+   //   archive 'target/*.jar'
    }
    
