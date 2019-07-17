@@ -1,7 +1,7 @@
-@Library("ndcc-shared-lib") _
-ndccservice.groovy
+/*@Library("ndcc-shared-lib") _
+ndccservice.groovy*/
 
-/*node {
+node {
    def mvnHome
    def gradleHome
 
@@ -30,13 +30,16 @@ ndccservice.groovy
 		   bat(/"${gradleHome}\bin\gradle" clean build/)
 		   }
 		   }
-
-      junit '---"**"/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
+stage('publish artifact') {
+        if (isUnix()){
+		//sh "'${gradleHome}/bin/gradle clean build'"
+		sh "./gradlew uploadArchives"
+		} else {
+		   bat(/"${gradleHome}\bin\gradle" clean build/)
+		   }
+		   }
+      //junit '/target/surefire-reports/TEST-*.xml'
+    //  archive 'target/*.jar'
    }
    
-<<<<<<< HEAD:jenkinsfile
-}*/
-=======
-}
->>>>>>> 5fa1b0e5c164f9b6e3620279f79ac34492653465:Jenkinsfile
+
