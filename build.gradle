@@ -2,16 +2,27 @@ plugins {
 	id 'org.springframework.boot' version '2.1.3.RELEASE'
 	id 'java'
 }
+apply plugin: 'maven'
 
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.ndcc.registration'
-version = '0.0.1'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
 }
+
+ext.stagingDirectory = file("${buildDir}/stage")
+ext.repositoryDirectory = file("${buildDir}/repository")
+configurations {
+	// define a configuration just for using the nexus-ant-tasks, non-transitive as we use the uber jar
+	nexusStaging {
+		transitive = false
+	}
+}
+
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
@@ -34,4 +45,17 @@ dependencies {
 	compile("io.springfox:springfox-swagger2:2.9.2")
 	compile("io.springfox:springfox-swagger-ui:2.9.2")
 	//compile("org.ajar:swagger-spring-mvc-ui:0.4")
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: "${nexusUrl}/repository/maven-snapshots/") {
+				authentication(userName: "admin", password: "arya@1983")
+			}
+			snapshotRepository(url: "${nexusUrl}/repository/maven-snapshots/") {
+				authentication(userName: "admin", password: "arya@1983")
+			}
+		}
+	}
 }
