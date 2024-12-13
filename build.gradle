@@ -11,6 +11,9 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+	maven {
+		url 'https://public.nexus.pentaho.org/content/groups/omni/'
+	}
 }
 
 dependencies {
@@ -33,5 +36,6 @@ dependencies {
 	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
 	compile("io.springfox:springfox-swagger2:2.9.2")
 	compile("io.springfox:springfox-swagger-ui:2.9.2")
-	//compile("org.ajar:swagger-spring-mvc-ui:0.4")
+	// https://mvnrepository.com/artifact/org.ajar/swagger-spring-mvc-ui
+	compile 'org.ajar:swagger-spring-mvc-ui:0.4
 }
